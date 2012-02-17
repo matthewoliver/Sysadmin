@@ -13,13 +13,11 @@
 # "REMOTE_USER" environment variable to be the name of the user you're
 # "authenticated" as.
 
-METHOD="GET"
-USER="nagiosadmin"
 
-# 64 BIT
-#NAGIOS_CMD="/usr/lib64/nagios/cgi-bin/cmd.cgi" 
-# 32 BIT
-NAGIOS_CMD="/usr/lib/nagios/cgi/cmd.cgi"
+WORKINGDIR="$( cd "$( dirname "$0" )" && pwd )"
+source "$WORKINGDIR/settings.sh"
+
+METHOD="GET"
 
 OK="OK"
 FAIL="FAIL!"
