@@ -50,7 +50,7 @@ BEGIN {
 		}
 		hierarchie = hier[1]
 		neighbor = hier[2]
-		objtype = $10
+		objtype = tolower($10)
 	} else if (NF == 7) {    # Squid 1.0 native log format
 		timestamp = $1
 		elapsed = $2
@@ -237,13 +237,13 @@ END {
 	}
 
 	print_table("Top 10 sites by xfers", "sort -r -n -k 1 2>/dev/null | head -10", dtr, dxr, dxb, dxt, dhr, dhb, dmx)
-	print_table("Top 10 sites by MB", "sort -r -n -k 5 2>/dev/null | head -10", dtr, dxr, dxb, dxt, dhr, dhb, dmx)
-	print_table("Top 10 neighbor report", "sort -r -n -k 5 2>/dev/null | head -10", ntr, nxr, nxb, nxt, nhr, nhb, nmx)
+	print_table("Top 10 sites by MB", "sort -r -n -k 6 2>/dev/null | head -10", dtr, dxr, dxb, dxt, dhr, dhb, dmx)
+	print_table("Top 10 neighbor report", "sort -r -n -k 6 2>/dev/null | head -10", ntr, nxr, nxb, nxt, nhr, nhb, nmx)
 	print_table("Local code", "sort", ltr, lxr, lxb, lxt, lhr, lhb, lmx)
 	print_table("Status code", "sort", str, sxr, sxb, sxt, shr, shb, smx)
 	print_table("Hierarchie code", "sort", htr, hxr, hxb, hxt, hhr, hhb, hmx)
 	print_table("Method report", "sort", mtr, mxr, mxb, mxt, mhr, mhb, mmx)
-	print_table("Object type report", "sort", otr, oxr, oxb, oxt, ohr, ohb, omx)
+	print_table("Object type report", "sort -r -n -k 6", otr, oxr, oxb, oxt, ohr, ohb, omx)
 	print_table("Ident (User) Report", "sort -r -n -k 6", utr, uxr, uxb, uxt, uhr, uhb, umx)
 	print_table("Weekly report", "sort", wtr, wxr, wxb, wxt, whr, whb, wmx)
 	print_table("Total report", "cat", ttr, txr, txb, txt, thr, thb, tmx)
