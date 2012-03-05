@@ -206,7 +206,7 @@ END {
 		close("sort")
 	}
 
-	print_table("Top 10 sites by xfers", "sort -r -n -k 1 2>/dev/null | head -10", dtr, dxr, dxb, dxt, dhr, dhb)
+	print_table("Top 10 sites by xfers", "sort -r -n -k 4 2>/dev/null | head -10", dtr, dxr, dxb, dxt, dhr, dhb)
 	print_table("Top 10 sites by MB", "sort -r -n -k 6 2>/dev/null | head -10", dtr, dxr, dxb, dxt, dhr, dhb)
 	print_table("Top 10 neighbor report", "sort -r -n -k 6 2>/dev/null | head -10", ntr, nxr, nxb, nxt, nhr, nhb)
 	print_table("Local code", "sort", ltr, lxr, lxb, lxt, lhr, lhb)
@@ -219,7 +219,7 @@ END {
 	print_table("Total report", "cat", ttr, txr, txb, txt, thr, thb)
 
 	print ""
-	print "Produced by : Mollie's hacked access-flow 0.5"
+	print "Produced by : Mollie's hacked access-flow 0.6"
 	print "Running time: " (systime() - analysis_start) " seconds"
 }
 
