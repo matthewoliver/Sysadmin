@@ -1,0 +1,11 @@
+The python script seems to have a problem with more then 300 connections, so I used: 
+
+
+python dos.py 300
+
+NOTE: The configuration is in the file itself, it is a quickly written script used test the number of network connections. 
+
+If you want to go all out, you could do something like:
+	for y in 1 2 3 4 5 6 7 8 9; do for x in 1 2 3 4 5 6 7 8 9; do python dos.py 300 & done ; done
+
+
